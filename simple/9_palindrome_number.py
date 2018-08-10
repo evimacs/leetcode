@@ -7,8 +7,6 @@ class Solution(object):
         """
         if x < 0:
             return False
-        elif x == 0:
-            return True
         else:
             ret = 0
             a = x
@@ -24,7 +22,7 @@ class Solution(object):
 
 def main():
     solution = Solution()
-    result = solution.isPalindrome(1724334271)
+    result = solution.isPalindrome(0)
     print(result)
 
 

@@ -7,6 +7,8 @@ class Solution(object):
         """
         if x < 0:
             return False
+        elif x < 10:
+            return True
         else:
             ret = 0
             a = x
@@ -14,7 +16,7 @@ class Solution(object):
                 _mod = x % 10
                 ret = ret * 10 + _mod
                 x = x // 10
-                if abs(x) < 9:
+                if abs(x) <= 9:
                     ret = ret * 10 + x
                     break
             return ret == a

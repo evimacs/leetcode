@@ -8,12 +8,17 @@ class Solution(object):
         flag = -1 if x < 0 else 1
         x = x * flag
         while True:
+            if x < 10:
+                return x
             _mod = x % 10
             ret = ret * 10 + _mod
             x = x // 10
-            if abs(x) < 9:
+            if abs(x) <= 9:
                 ret = ret * 10 + x
-                return ret * flag
+                ret = ret * flag
+                if ret < -1 * pow(2, 31) or ret > pow(2, 31) - 1:
+                    ret = 0
+                return ret
 
 
 def main():

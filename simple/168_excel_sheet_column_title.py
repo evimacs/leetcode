@@ -6,14 +6,11 @@ class Solution:
         :rtype: str
         """
         ret = ''
-        while n > 26:
-
-            ret += chr(64 + n % 26)
-            n = n // 26
-
-        ret += chr(64 + n)
-        ret = ret[::-1]
-        return ret
+        while n > 0:
+            print(n)
+            ret += chr(ord('A') + (n-1) % 26)
+            n = (n-1) // 26
+        return ret[::-1]
 
 def main():
     solution = Solution()

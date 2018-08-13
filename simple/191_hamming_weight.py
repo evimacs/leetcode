@@ -1,20 +1,18 @@
 class Solution(object):
-    def countSegments(self, s):
+    def hammingWeight(self, n):
         """
 
-        :type s: str
+        :type n:
         :rtype: int
         """
-
-        return len(s.split())
+        return str(bin(n)).count('1')
 
 
 def main():
     solution = Solution()
-    ret = solution.countSegments('Hello, my name is John')
+    ret = solution.hammingWeight([1, 2, 3, 1])
     print(ret)
 
 
 if __name__ == '__main__':
     main()
-

@@ -6,17 +6,21 @@ class Solution(object):
         :type k: int
         :rtype: float
         """
-        averages = list()
-        if len(nums) == k:
-            return sum(nums) / k
-        for x in range(len(nums) - k):
-            averages.append(sum(nums[x: x + k]) / k)
-        return max(averages)
+        ret = 0
+        a = 0
+        for x in range(len(nums) - k + 1):
+            _ret = sum(nums[x:(x + k):])
+            if not a:
+                ret = _ret
+            if ret < _ret:
+                ret = _ret
+            a += 1
+        return ret  / k
 
 
 def main():
     solution = Solution()
-    ret = solution.findMaxAverage([5, 5], 1)
+    ret = solution.findMaxAverage([-1], 1)
     print(ret)
 
 

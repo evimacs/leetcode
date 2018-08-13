@@ -5,17 +5,7 @@ class Solution(object):
         :type nums: List[int]
         :rtype: bool
         """
-        temp_dict = {}
-        for x in nums:
-            if x in temp_dict:
-                _temp = temp_dict[x]
-                _temp += 1
-                if _temp >= 2:
-                    return True
-                temp_dict[x] = _temp
-            else:
-                temp_dict[x] = 1
-        return False
+        return len(set(nums)) != len(nums)
 
 def main():
     solution = Solution()

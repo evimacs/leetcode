@@ -1,3 +1,6 @@
+import math
+
+
 class Solution(object):
     def checkPerfectNumber(self, num):
         """
@@ -5,12 +8,13 @@ class Solution(object):
         :type num: int
         :rtype: bool
         """
-        rets = [1]
-        for x in range(2, num // 2):
+        if num <= 1:
+            return False
+        temp = 0
+        for x in range(1, int(math.sqrt(num)) + 1):
             if num % x == 0:
-                rets.extend([x, num // x])
-        print(rets)
-        return num == sum(set(rets))
+                temp += x + ((num // x) if (num // x) < num else 0)
+        return num == temp
 
 
 def main():
@@ -21,3 +25,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+

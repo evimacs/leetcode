@@ -1,16 +1,17 @@
 class Solution(object):
-    def addDigits(self, num):
+    def arrayPairSum(self, nums):
         """
 
-        :type num: int
+        :type nums: List[int]
         :rtype: int
         """
-        return num and (num % 9 or 9)
+        nums.sort()
+        return sum(nums[0::2])
 
 
 def main():
     solution = Solution()
-    ret = solution.addDigits()
+    ret = solution.arrayPairSum()
     print(ret)
 
 

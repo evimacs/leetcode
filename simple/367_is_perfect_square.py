@@ -18,6 +18,7 @@ class Solution(object):
                 return True
         return False
 
+
 def main():
     solution = Solution()
     ret = solution.isPerfectSquare(100)

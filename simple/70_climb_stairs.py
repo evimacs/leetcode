@@ -4,9 +4,11 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
-        if n in (1, 0):
-            return 1
-        return self.climbStairs(n - 1) + self.climbStairs(n - 2)
+        ret = [0] * (n + 1)
+        ret[0:2] = [1, 1]
+        for i in range(2, n + 1):
+            ret[i] = ret[i - 1] + ret[i - 2]
+        return ret[n]
 
 
 def main():
@@ -17,4 +19,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-

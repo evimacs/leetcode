@@ -13,7 +13,6 @@ class Solution(object):
         return -1 if not rets else min(rets)
 
 
-
 def main():
     solution = Solution()
     ret = solution.firstUniqChar([1, 2, 3, 1])

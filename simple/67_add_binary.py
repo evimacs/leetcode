@@ -1,16 +1,20 @@
 class Solution(object):
-    def addBinary(self, , ):
+    def addBinary(self, a, b):
         """
 
-        :type : List[int]
-        :type : int
-        :rtype: List[int]
+        :type a: str
+        :type b: str
+        :rtype: str
         """
+        return bin(int(a, 2) + int(b, 2))[2:]
 
 
 def main():
     solution = Solution()
-    ret = solution.addBinary()
+    a = '11'
+    b = '1'
+
+    ret = solution.addBinary(a, b)
     print(ret)
 
 

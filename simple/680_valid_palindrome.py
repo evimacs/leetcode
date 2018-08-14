@@ -8,15 +8,13 @@ class Solution(object):
         ret = s[::-1]
         if s == ret:
             return True
-
-        for i in range(len(s)):
-            print(s)
-            if s[i] != ret[i]:
-                print(i)
-                temp = s[:i:] + s[:i+1:]
-                print(temp)
-                return temp == temp[::-1]
-
+        k = len(s)
+        for i in range(k):
+            if s[i] != s[k - i - 1]:
+                s1 = s[i:k - i - 1]
+                s2 = s[i + 1:k - i]
+                return s1 == s1[::-1] or s2 == s2[::-1]
+        return True
 
 
 def main():

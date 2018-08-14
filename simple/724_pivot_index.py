@@ -1,16 +1,16 @@
 class Solution(object):
-    def addDigits(self, num):
+    def pivotIndex(self, nums):
         """
 
-        :type num: int
-        :rtype: int
+        :type nums: List[int]
+        :type : int
+        :rtype: List[int]
         """
-        return num and (num % 9 or 9)
 
 
 def main():
     solution = Solution()
-    ret = solution.addDigits()
+    ret = solution.pivotIndex()
     print(ret)
 
 

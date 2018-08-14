@@ -15,7 +15,7 @@ class Solution(object):
             if ret < _ret:
                 ret = _ret
             a += 1
-        return ret  / k
+        return ret / k
 
 
 def main():

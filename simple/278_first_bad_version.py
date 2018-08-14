@@ -1,29 +1,30 @@
+def isBadVersion():
+    pass
+
+
 class Solution(object):
-    def mySqrt(self, x):
+    def firstBadVersion(self, n):
         """
 
-        :type x: int
+        :type n: int
         :rtype: int
         """
 
-        start = 0
-        end = x
+        start = 1
+        end = n
         middle = (start + end) // 2
         while start <= end:
-            temp = middle * middle
-            if temp > x:
+            if isBadVersion(middle - 1):
                 end = middle - 1
-            elif temp < x:
-                start = middle + 1
             else:
-                return middle
+                start = middle + 1
             middle = (start + end) // 2
         return middle
 
 
 def main():
     solution = Solution()
-    ret = solution.mySqrt(8)
+    ret = solution.firstBadVersion()
     print(ret)
 
 

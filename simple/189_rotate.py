@@ -5,8 +5,8 @@ class Solution(object):
         :type k: int
         :rtype: void Do not return anything, modify nums in-place instead.
         """
-        nums = nums[k + 1::] + nums[:k + 1:]
-        print(nums)
+        nums_len = len(nums)
+        nums[:] = nums[nums_len - k:] + nums[:nums_len - k]
 
 
 def main():

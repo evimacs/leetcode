@@ -6,16 +6,23 @@ class Solution(object):
         :type n: int
         :rtype: bool
         """
-        ret = list()
-        temp = 0
-        for x in flowerbed:
-            if x == 0:
-                temp += 1
+        m, count, num, i = len(flowerbed), 0, 0, 0
+        if m == 1 and flowerbed[0] == 0:
+            num += 1
+        while i < m:
+            if flowerbed[i] == 0:
+                count += 1
+                if (i == 1 or i == m - 1) and count == 2:
+                    num += 1
+                    count = 1
+                if count == 3:
+                    num += 1
+                    count = 1
             else:
-                if temp and temp >= 3:
-                    ret.append(temp)
-                temp = 0
-        return sum(ret) >= (2 * n + 1)
+                count = 0
+            if num >= n:
+                return True
+        return False
 
 
 def main():

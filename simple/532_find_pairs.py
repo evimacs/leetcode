@@ -6,21 +6,28 @@ class Solution(object):
         :type k: int
         :rtype: List[int]
         """
-        temp = set()
-        nums = set(nums)
+        if k < 0 or not nums:
+            return 0
+        temp = dict()
         for x in nums:
-            if (x + k) in nums:
-                temp.add((x, x + k))
-            if (x - k) in nums:
-                temp.add((x - k, x))
-        print(temp)
-
-        return len(temp)
-
+            if x not in temp:
+                temp[x] = 1
+            else:
+                temp[x] += 1
+        ret = 0
+        if k == 0:
+            for v in temp.values():
+                if v > 1:
+                    ret += 1
+        else:
+            for x in temp:
+                if x + k in temp:
+                    ret += 1
+        return ret
 
 def main():
     solution = Solution()
-    ret = solution.findPairs([1, 3, 1, 5, 4], 0)
+    ret = solution.findPairs([1, 3, 1, 5, 4], 2)
     print(ret)
 
 

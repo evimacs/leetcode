@@ -6,27 +6,17 @@ class Solution(object):
         :rtype: int
         """
 
-        ret = list()
+        temp_index = 0
         temp = ''
-        flag = 1
-        for x in chars:
-            if x != temp:
-                ret.append(x)
-                print(flag)
-                if flag > 1:
-                    ret.append(str(flag))
-                flag = 1
-                temp = x
-            else:
-                flag += 1
+        temp_count = 0
+        for i in range(len(chars)):
+            if temp != chars[i]:
+                temp = chars[i]
 
-        for y, x in enumerate(ret):
-            if len(x) > 1:
-                for j, i in enumerate(x):
-                    ret.insert(j, i)
-        chars = ret[:len(chars):]
-        print(chars)
-        return len(chars)
+            else:
+                chars[temp_index] += 1
+
+
 
 
 def main():

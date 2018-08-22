@@ -11,25 +11,31 @@ class Solution(object):
         :type head: ListNode
         :rtype: ListNode
         """
-        temp_list = list()
-        p = head
-        while True:
-            if not p:
-                break
-            if p.val in temp_list:
-                p.next = p.next.next
-            else:
-                temp_list.append(p.val)
-            p = p.next
+        if head == None or head.next == None:
+            return head
+
+        pre = None
+        cur = head
+        while cur != None:
+            pre = cur
+            cur = cur.next
+            while cur != None and cur.val == pre.val:
+                pre.next = cur.next
+                cur = cur.next
+
         return head
 
 
 def main():
     solution = Solution()
-    ret = solution.deleteDuplicates()
-    print(ret)
+    head = ListNode(1, ListNode(1, ListNode(2, ListNode(2))))
+    ret = solution.deleteDuplicates(head)
+    while True:
+        if not ret:
+            break
+        print(ret.val)
+        ret = ret.next
 
 
 if __name__ == '__main__':
     main()
-

@@ -6,23 +6,21 @@ class Solution(object):
         :type k: int
         :rtype: bool
         """
-        num_map = dict()
-        for i in range(len(nums)):
-            if nums.count(nums[i]) > 1:
-                num_map.setdefault(nums[i], []).append(i)
-        for key, values in num_map.items():
-            values = list(values)
-            values.sort()
-            if values[0] + key <= values[-1]:
-                return True
+        nums_map = dict()
+        for x in range(len(nums)):
+            if nums[x] in nums_map:
+                if x - nums_map[nums[x]] <= k:
+                    return True
+                else:
+                    nums_map[nums[x]] = x
+            else:
+                nums_map[nums[x]] = x
         return False
-
-
 
 
 def main():
     solution = Solution()
-    ret = solution.containsNearbyDuplicate([99, 99], 2)
+    ret = solution.containsNearbyDuplicate([1, 2, 3, 1, 2, 3], 2)
     print(ret)
 
 

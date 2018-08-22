@@ -5,15 +5,15 @@ class Solution(object):
         :type s: str
         :rtype: List[str]
         """
-        ret = [s]
-        temp = list(s)
-        a = 0
-        for x in s:
-            temp[a] = x.lower()
-            ret.append(''.join(temp))
-            temp[a] = x.upper()
-            ret.append(''.join(temp))
-        return list(set(ret))
+        ret = set()
+        ret.add(s)
+        for y, x in enumerate(s):
+            if x.isupper():
+                ret.add(s[0:y] + x.lower() + s[y+1:])
+            elif x.islower():
+                ret.add(s[0:y] + x.upper() + s[y+1:].lower())
+            ret.add(s[0:y] + x + s[y + 1:].lower())
+        return list(ret)
 
 
 def main():

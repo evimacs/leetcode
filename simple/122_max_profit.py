@@ -15,7 +15,6 @@ class Solution(object):
         return profit
 
 
-
 def main():
     solution = Solution()
     ret = solution.maxProfit([1, 2, 3, 1])

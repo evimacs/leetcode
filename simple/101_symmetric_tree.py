@@ -12,6 +12,7 @@ class Solution(object):
         :type root:TreeNode
         :rtype: bool
         """
+
         def f(p, q):
             if not p:
                 return not q
@@ -21,6 +22,7 @@ class Solution(object):
                 return f(p.left, q.right) and f(p.right, q.left)
             if p.val != q.val:
                 return False
+
         if not root:
             return True
         return f(root.right, root.left)

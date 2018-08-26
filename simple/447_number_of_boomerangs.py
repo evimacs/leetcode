@@ -16,14 +16,13 @@ class Solution(object):
                 if i == j:
                     continue
                 dis = (points[i][0] - points[j][0]) ** 2 + (
-                            points[i][1] - points[j][1]) ** 2
+                        points[i][1] - points[j][1]) ** 2
                 d[dis] = d.get(dis, 0) + 1
             for item in d.values():
                 if item >= 2:
                     res += item * (item - 1)
             d.clear()
         return res
-
 
 
 def main():

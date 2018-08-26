@@ -13,7 +13,7 @@ class Solution(object):
         for i in range(len(houses)):
             while index + 1 < len(heaters) and (
                     abs(heaters[index + 1] - houses[i]) <= abs(
-                    heaters[index] - houses[i])):
+                heaters[index] - houses[i])):
                 index += 1
             maxidx = max(maxidx, abs(heaters[index] - houses[i]))
         return maxidx

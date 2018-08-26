@@ -17,7 +17,7 @@ class Solution(object):
 
 def main():
     solution = Solution()
-    ret = solution.maxProfit([7,6,4,3,1])
+    ret = solution.maxProfit([7, 6, 4, 3, 1])
     print(ret)
 
 

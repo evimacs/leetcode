@@ -6,6 +6,7 @@ class TreeNode(object):
         self.left = left
         self.right = right
 
+
 class Solution(object):
     def levelOrderBottom(self, root):
         """
@@ -16,7 +17,6 @@ class Solution(object):
         if not root:
             return [[]]
         ret = list()
-
 
 
 def main():

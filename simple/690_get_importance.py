@@ -4,6 +4,7 @@ class Employee(object):
         self.importance = importance
         self.subordinates = subordinates
 
+
 class Solution(object):
     def getImportance(self, employees, id):
         """
@@ -25,7 +26,7 @@ class Solution(object):
 
 def main():
     solution = Solution()
-    employees = [Employee(1, 5, [2,3]), Employee(2, 3, []), Employee(3,3,[])]
+    employees = [Employee(1, 5, [2, 3]), Employee(2, 3, []), Employee(3, 3, [])]
     ret = solution.getImportance(employees, 1)
     print(ret)
 

@@ -26,6 +26,7 @@ class Solution(object):
 
         return head
 
+
 def main():
     solution = Solution()
     ret = solution.removeElements([1, 2, 3, 1])

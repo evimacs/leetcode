@@ -17,7 +17,6 @@ class Solution(object):
                 ret.append(len(_ret))
 
 
-
 def main():
     solution = Solution()
     ret = solution.findLengthOfLCIS([1, 2, 3, 1])

@@ -12,8 +12,6 @@ class Solution(object):
             return max(len(a), len(b))
 
 
-
-
 def main():
     solution = Solution()
     ret = solution.findLUSlength([1, 2, 3, 1])

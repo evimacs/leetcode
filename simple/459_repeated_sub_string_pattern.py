@@ -14,7 +14,6 @@ class Solution(object):
         return False
 
 
-
 def main():
     solution = Solution()
     ret = solution.repeatedSubstringPattern('abcabcabcabc')

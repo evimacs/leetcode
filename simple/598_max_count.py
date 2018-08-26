@@ -12,7 +12,6 @@ class Solution(object):
         return min(a[0]) * min(a[1])
 
 
-
 def main():
     solution = Solution()
     ret = solution.maxCount([1, 2, 3, 1])

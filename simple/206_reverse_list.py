@@ -3,6 +3,7 @@ class ListNode(object):
         self.val = x
         self.next = node
 
+
 class Solution(object):
     def reverseList(self, head):
         """
@@ -19,7 +20,6 @@ class Solution(object):
             new_cur = cur
             cur = temp
         return new_cur
-
 
 
 def main():

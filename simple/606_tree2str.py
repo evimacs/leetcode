@@ -5,7 +5,6 @@ class Solution(object):
         :type t: TreeNode
         :rtype: str
         """
-        
 
 
 def main():

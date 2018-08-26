@@ -5,24 +5,30 @@ class Solution(object):
         :type bills: List[int]
         :rtype: bool
         """
-        for i in bills:
-            if i == 10:
-                _i = bills.index(5)
-                if bills.index(i) < _i or _i == -1:
+        temp_5 = list()
+        temp_10 = list()
+        for bill in bills:
+            if bill == 5:
+                temp_5.append(5)
+            elif bill == 10:
+                try:
+                    temp_10.append(10)
+                    del temp_5[-1]
+                except Exception:
                     return False
-                else:
-                    bills[_i] = 0
-                    bills[bills.index(i)] = 5
             else:
-                _i = bills.index(5)
-                if bills.index(i) < _i or _i == -1:
+                try:
+                    del temp_5[-1]
+                except Exception:
                     return False
-                _i = bills.index(10)
-                if bills.index(i) < _i or _i == -1:
-                    return False
+                if temp_10:
+                    del temp_10[-1]
                 else:
-                    bills[_i] = 0
-                    bills[bills.index(i)] = 5
+                    try:
+                        del temp_5[-1]
+                        del temp_5[-1]
+                    except Exception:
+                        return False
         return True
 
 

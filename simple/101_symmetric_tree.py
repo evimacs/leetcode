@@ -12,9 +12,18 @@ class Solution(object):
         :type root:TreeNode
         :rtype: bool
         """
-        if root.right.right.val == root.left.left.val and root.right.left.val == root.left.right.val:
+        def f(p, q):
+            if not p:
+                return not q
+            if not q:
+                return not p
+            if p.val == q.val:
+                return f(p.left, q.right) and f(p.right, q.left)
+            if p.val != q.val:
+                return False
+        if not root:
             return True
-        return self.isSymetric(root)
+        return f(root.right, root.left)
 
 
 def main():

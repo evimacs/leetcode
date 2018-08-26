@@ -5,28 +5,21 @@ class Solution(object):
         :type chars: List[str]
         :rtype: int
         """
-
-        ret = list()
-        temp = ''
-        flag = 1
-        for x in chars:
-            if x != temp:
-                ret.append(x)
-                print(flag)
-                if flag > 1:
-                    ret.append(str(flag))
-                flag = 1
-                temp = x
+        n = len(chars)
+        i, count = 0, 1
+        for j in range(1, n + 1):
+            if j < n and chars[j] == chars[j - 1]:
+                count += 1
             else:
-                flag += 1
-
-        for y, x in enumerate(ret):
-            if len(x) > 1:
-                for j, i in enumerate(x):
-                    ret.insert(j, i)
-        chars = ret[:len(chars):]
+                chars[i] = chars[j - 1]
+                i += 1
+                if count > 1:
+                    for m in str(count):
+                        chars[i] = m
+                        i += 1
+                count = 1
         print(chars)
-        return len(chars)
+        return i
 
 
 def main():
